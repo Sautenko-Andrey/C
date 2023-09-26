@@ -1,0 +1,1 @@
+void printf_BRA_squad(void);

@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "stdio.h": "c",
+        "popular_func.h": "c",
+        "popular_input_func.h": "c",
+        "groceryapp.h": "c"
+    }
+}
