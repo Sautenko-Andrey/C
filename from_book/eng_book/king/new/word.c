@@ -8,14 +8,17 @@ int read_char(void){
 
     //if symbol is either 'next line symbol' or 'tabulate' we would return space
     //well, here we "cut" a long spaces beetween the words.
-    if (symbol == '\n' || symbol == '\t'){
-        return ' ';
-    }
+    // if (symbol == '\n' || symbol == '\t'){
+    //     return ' ';
+    // }
     //return regular symbol
-    return symbol;
+    // return symbol;
+
+    //we condenced program in the folowing way
+    return ( (symbol == '\n' || symbol == '\t') ? ' ' : symbol );
 }
 
-void read_word(char *word, int len)
+int read_word(char *word, int len)
 {   
     int symbol, position = 0; //position - same as index for array
 
@@ -39,4 +42,5 @@ void read_word(char *word, int len)
     }
 
     word[position] = '\0';  //adding "end of string" symbol
+    return position;
 }

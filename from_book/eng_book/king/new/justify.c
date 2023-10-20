@@ -1,4 +1,3 @@
-#include<string.h>
 #include"word.h"
 #include"line.h"
 
@@ -12,8 +11,11 @@ int main(void)
     clear_line();
     for(;;){
 
-        read_word(word, MAX_WORD_LEN + 1);
-        word_len = strlen(word);
+        // read_word(word, MAX_WORD_LEN + 1);
+        // word_len = strlen(word);
+
+        //revisited program
+        word_len = read_word(word, MAX_WORD_LEN + 1);
         
         if (word_len == 0){
             flush_line();
@@ -29,6 +31,6 @@ int main(void)
             clear_line();
         }
 
-        add_word(word);
+        add_word(word);        
     }
 }
