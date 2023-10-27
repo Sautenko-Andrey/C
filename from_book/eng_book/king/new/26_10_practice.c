@@ -315,10 +315,14 @@ struct color brighter(struct color user_color)
     change_color_to_3(&user_color.green);
     change_color_to_3(&user_color.blue);
 
+    user_color.red /= 0.7;
+    user_color.green /= 0.7;
+    user_color.blue /= 0.7;
 
-    NoGT255(user_color.red /= 0.7);
-    NoGT255(user_color.green /= 0.7);
-    NoGT255(user_color.blue /= 0.7);
+
+    NoGT255(&user_color.red);
+    NoGT255(&user_color.green);
+    NoGT255(&user_color.blue);
 
     return user_color;
 }
