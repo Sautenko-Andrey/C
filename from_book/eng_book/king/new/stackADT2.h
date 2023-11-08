@@ -6,7 +6,7 @@
 typedef struct stack_type *Stack;
 typedef int Item;
 
-Stack create(void);
+Stack create(int size);
 void destroy(Stack s);
 void make_empty(Stack s);
 bool is_empty(Stack s);
