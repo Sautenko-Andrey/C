@@ -3,10 +3,12 @@
 #include<stdarg.h>
 #include<stdio.h>
 #include<stdlib.h>
+#include<string.h>
 
 static int max_int(int n, ...);
 static void display_args(int arg_nums, ...);
 static double avg_double(int nums, ...);
+static char* conc_str(int nums, ...);
 
 int main(void)
 {      
@@ -14,6 +16,10 @@ int main(void)
 
     double avg_res = avg_double(5, 10.0, 15.0, 20.0, 55.75, 99.99);
     printf("Average price: %.4f $\n", avg_res);
+
+    char *text_res = conc_str(3,"one", "two", "three");
+    puts(text_res);
+    free(text_res);
 
     return 0;
 }
@@ -70,4 +76,21 @@ static double avg_double(int nums, ...)
     va_end(ap);
 
     return total / (double)nums;
+}
+
+static char* conc_str(int nums, ...)
+{
+    va_list args_list;
+
+    char *res_text = malloc(sizeof(char) * 100);
+
+    va_start(args_list, nums);
+
+    for(int i = 0; i < nums; ++i){
+        strcat(res_text, va_arg(args_list, char *));
+    }
+
+    va_end(args_list);
+
+    return res_text;
 }
