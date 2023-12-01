@@ -1,0 +1,6 @@
+this is data list.
+
+Jane	1000.0
+Nick	575.90
+Olli	30.00
+Maxwell	0.5
